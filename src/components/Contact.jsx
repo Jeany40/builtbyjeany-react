@@ -14,6 +14,7 @@ function Contact() {
     // FormSubmit specific configurations (optional but helpful)
     formData.append("_captcha", "false"); 
     formData.append("_subject", "New Request from BuiltByJeany.com");
+    formData.append("_template", "box"); // Makes the received email look incredibly sleek and professional
 
     try {
       await fetch("https://formsubmit.co/ajax/hello@builtbyjeany.com", {
