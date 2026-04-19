@@ -253,7 +253,7 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:72px 6% 
 @media(max-width:640px){
   section{padding:72px 5%}
   nav{padding:0 5%}
-  .hero-content{padding:0 0}
+  .hero-content{padding:110px 0 0}
   .services-grid{grid-template-columns:1fr}
   .ba-grid{grid-template-columns:1fr}
   .contact-form{padding:28px 20px}
