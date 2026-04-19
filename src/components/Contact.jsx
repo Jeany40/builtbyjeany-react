@@ -10,16 +10,27 @@ function Contact() {
     
     const form = e.target;
     const formData = new FormData(form);
-    
-    // FormSubmit specific configurations (optional but helpful)
-    formData.append("_captcha", "false"); 
-    formData.append("_subject", "New Request from BuiltByJeany.com");
-    formData.append("_template", "box"); // Makes the received email look incredibly sleek and professional
+    // EmailJS payload
+    // You MUST replace the three placeholders below with your actual EmailJS credentials
+    const data = {
+      service_id: 'YOUR_SERVICE_ID',
+      template_id: 'YOUR_TEMPLATE_ID',
+      user_id: 'YOUR_PUBLIC_KEY',
+      template_params: {
+        'name': formData.get('name'),
+        'phone': formData.get('phone'),
+        'email': formData.get('email'),
+        'service': formData.get('service'),
+        'description': formData.get('description'),
+        'time': formData.get('time')
+      }
+    };
 
     try {
-      await fetch("https://formsubmit.co/ajax/hello@builtbyjeany.com", {
+      await fetch("https://api.emailjs.com/api/v1.0/email/send", {
         method: "POST",
-        body: formData,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
       });
       setSubmitted(true);
       form.reset();
