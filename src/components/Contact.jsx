@@ -13,7 +13,7 @@ function Contact() {
     // EmailJS payload
     // You MUST replace the three placeholders below with your actual EmailJS credentials
     const data = {
-      service_id: 'service_jeany',
+      service_id: 'service_dwry56k',
       template_id: 'template_u4t46px',
       user_id: 'qKqoKFtaOrQQhfdrR',
       template_params: {
