@@ -58,7 +58,7 @@ function Booking() {
           <div 
             className="calendly-inline-widget" 
             data-url="https://calendly.com/hello-builtbyjeany/free-estimate-walkthrough?hide_gdpr_banner=1&background_color=ffffff&text_color=111111&primary_color=d4722a" 
-            style={{minWidth: "320px", height: "660px"}}
+            style={{minWidth: "320px", height: "500px"}}
           ></div>
         </div>
       </div>
