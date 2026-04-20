@@ -237,32 +237,114 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:72px 6% 
 .wa-pulse{position:absolute;inset:-4px;border:1px solid rgba(37,211,102,0.4);animation:pulse 2.5s ease-out infinite;border-radius:50%}
 @keyframes pulse{0%{transform:scale(1);opacity:0.7}100%{transform:scale(1.5);opacity:0}}
 
-/* RESPONSIVE */
+/* RESPONSIVE — TABLET (960px) */
 @media(max-width:960px){
   .nav-links{display:none}
   .hamburger{display:flex}
+
+  /* About */
   #about{grid-template-columns:1fr;gap:48px}
+  .about-img{aspect-ratio:16/9;object-position:center}
+
+  /* Services */
   .services-grid{grid-template-columns:1fr 1fr}
-  #contact{grid-template-columns:1fr;gap:48px}
-  .booking-inner{grid-template-columns:1fr;gap:48px}
+  .services-header{flex-direction:column;align-items:flex-start;gap:16px}
+
+  /* Portfolio */
+  .portfolio-info{flex-direction:column;gap:24px}
+
+  /* Reviews */
+  .reviews-top{flex-direction:column;align-items:flex-start}
+
+  /* Why */
   .why-inner{grid-template-columns:1fr;gap:48px}
+
+  /* Booking */
+  .booking-inner{grid-template-columns:1fr;gap:40px}
+  .calendly-inline-widget{height:420px}
+
+  /* Contact */
+  #contact{grid-template-columns:1fr;gap:48px}
+
+  /* Footer */
   .footer-grid{grid-template-columns:1fr 1fr}
   .footer-brand{grid-column:1/-1}
-  .reviews-top{flex-direction:column;align-items:flex-start}
+
+  /* Pricing */
+  .pricing-actions{flex-direction:column;align-items:flex-start}
 }
+
+/* RESPONSIVE — MOBILE (640px) */
 @media(max-width:640px){
-  section{padding:72px 5%}
+  section{padding:64px 5%}
   nav{padding:0 5%}
+
+  /* Hero */
   .hero-content{padding:110px 0 0}
+  #hero{padding:0 5%;min-height:100svh}
+  .hero-title{font-size:clamp(40px,12vw,72px)}
+  .hero-sub{font-size:14px}
+  .hero-actions{flex-direction:column;align-items:flex-start;gap:20px}
+  .hero-stats{flex-direction:column;gap:0;margin-top:48px;padding-top:28px}
+  .stat{border-right:none;padding-right:0;margin-right:0;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:4px}
+  .stat:last-child{border-bottom:none;padding-bottom:0}
+  .stat-num{font-size:32px}
+
+  /* About */
+  #about{padding:64px 5%}
+  .about-img-badge{padding:14px 18px}
+  .about-img-badge .num{font-size:24px}
+
+  /* Services */
   .services-grid{grid-template-columns:1fr}
+  .service-card{padding:28px 24px}
+
+  /* Portfolio */
   .ba-grid{grid-template-columns:1fr}
+  .portfolio-tags{gap:6px}
+
+  /* Reviews */
+  .review-card{width:280px;padding:24px}
+  .reviews-score{font-size:52px}
+
+  /* Why */
+  .why-pull{font-size:clamp(22px,6vw,36px)}
+  .trust-item{gap:16px}
+
+  /* Pricing */
+  .pricing-table td{padding:16px 0}
+  .pricing-table td:first-child{font-size:13px;padding-right:16px}
+  .pricing-table td:last-child{font-size:18px}
+  .pricing-actions{flex-direction:column;align-items:flex-start}
+
+  /* Booking */
+  .calendly-inline-widget{height:380px;min-width:100%}
+  .cal-header{padding:20px}
+  .cal-header h3{font-size:20px}
+  .booking-inner{gap:32px}
+
+  /* Contact */
   .contact-form{padding:28px 20px}
-  .footer-grid{grid-template-columns:1fr;gap:40px}
-  .footer-bottom{flex-direction:column;align-items:flex-start}
   .form-row{grid-template-columns:1fr}
-  .hero-stats{flex-direction:column;gap:24px}
-  .stat{border-right:none;padding-right:0;margin-right:0;border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:4px}
-  .stat:last-child{border-bottom:none}
+  #contact{padding:64px 5%}
+
+  /* Footer */
+  .footer-grid{grid-template-columns:1fr;gap:36px}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:8px}
+  footer{padding:56px 5% 32px}
+
+  /* WhatsApp */
+  .wa-float{bottom:20px;right:20px}
+}
+
+/* RESPONSIVE — SMALL MOBILE (380px) */
+@media(max-width:380px){
+  .hero-title{font-size:36px}
+  .section-title{font-size:30px}
+  .btn-primary{padding:14px 28px;font-size:11px}
+  .pricing-table td:last-child{font-size:16px}
+  .review-card{width:260px}
+  .contact-form{padding:20px 16px}
 }
 
 /* ANIMATIONS */
