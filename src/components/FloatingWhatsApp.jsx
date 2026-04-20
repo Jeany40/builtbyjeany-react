@@ -6,10 +6,10 @@ function FloatingWhatsApp() {
       <div className="wa-tooltip">Text me on WhatsApp</div>
       <a 
         className="wa-btn" 
-        href="whatsapp://send?phone=13475842350&text=Hi%2C%20I%20found%20BuiltByJeany%20and%20I%27d%20like%20a%20free%20estimate." 
+        href="https://wa.me/13475842350?text=Hi%2C%20I%20found%20BuiltByJeany%20and%20I%27d%20like%20a%20free%20estimate."
         target="_blank" 
         rel="noreferrer"
-        aria-label="WhatsApp"
+        aria-label="Chat on WhatsApp"
       >
         <div className="wa-pulse"></div>
         <svg viewBox="0 0 32 32" fill="white">

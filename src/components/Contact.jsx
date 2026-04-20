@@ -6,16 +6,20 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Honeypot bot check — if this hidden field is filled, it's a bot
+    const honeypot = e.target.querySelector('input[name="_honeypot"]');
+    if (honeypot && honeypot.value) return;
+
     setLoading(true);
     
     const form = e.target;
     const formData = new FormData(form);
-    // EmailJS payload
-    // You MUST replace the three placeholders below with your actual EmailJS credentials
+
     const data = {
-      service_id: 'service_4b6vegm',
-      template_id: 'template_u4t46px',
-      user_id: 'qKqoKFtaOrQQhfdrR',
+      service_id: import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_4b6vegm',
+      template_id: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_u4t46px',
+      user_id: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'qKqoKFtaOrQQhfdrR',
       template_params: {
         'name': formData.get('name'),
         'phone': formData.get('phone'),
@@ -36,7 +40,7 @@ function Contact() {
       form.reset();
     } catch (error) {
       console.error(error);
-      alert("Failed to send message. Please send an email directly instead.");
+      alert("Failed to send message. Please call or email directly instead.");
     } finally {
       setLoading(false);
     }
@@ -56,13 +60,19 @@ function Contact() {
             <div className="contact-icon-wrap">
               <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63 19.79 19.79 0 01.07 2 2 2 0 012 .07h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
             </div>
-            <div className="contact-item-text"><span className="label">Phone</span><span className="value">347-584-2350</span></div>
+            <div className="contact-item-text">
+              <span className="label">Phone</span>
+              <a href="tel:+13475842350" className="value" style={{color:'inherit',textDecoration:'none'}}>347-584-2350</a>
+            </div>
           </div>
           <div className="contact-item">
             <div className="contact-icon-wrap">
               <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </div>
-            <div className="contact-item-text"><span className="label">Email</span><span className="value">hello@builtbyjeany.com</span></div>
+            <div className="contact-item-text">
+              <span className="label">Email</span>
+              <a href="mailto:hello@builtbyjeany.com" className="value" style={{color:'inherit',textDecoration:'none'}}>hello@builtbyjeany.com</a>
+            </div>
           </div>
           <div className="contact-item">
             <div className="contact-icon-wrap">
@@ -79,6 +89,9 @@ function Contact() {
         </div>
       </div>
       <form className="contact-form" onSubmit={handleSubmit}>
+        {/* Honeypot — hidden from real users, traps bots */}
+        <input type="text" name="_honeypot" style={{display:'none'}} tabIndex={-1} autoComplete="off" />
+
         <div className="form-row">
           <div className="form-group"><label>Full Name</label><input type="text" name="name" placeholder="Your Name" required /></div>
           <div className="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="Your Phone" required /></div>
@@ -106,8 +119,17 @@ function Contact() {
           disabled={submitted || loading}
           style={submitted ? { background: '#2d7a3a' } : {}}
         >
-          {loading ? "Sending..." : submitted ? "Message Sent — I'll be in touch soon." : "Send My Request"}
+          {loading ? "Sending..." : submitted ? "Message Sent — I'll be in touch soon!" : "Send My Request"}
         </button>
+        {submitted && (
+          <button
+            type="button"
+            onClick={() => setSubmitted(false)}
+            style={{marginTop:'12px',width:'100%',background:'transparent',border:'1px solid rgba(255,255,255,0.1)',color:'var(--gray)',fontFamily:'var(--sans)',fontSize:'12px',letterSpacing:'0.1em',textTransform:'uppercase',padding:'12px',cursor:'pointer'}}
+          >
+            Send Another Message
+          </button>
+        )}
       </form>
     </section>
   );

@@ -24,8 +24,14 @@ function Footer() {
         <div className="footer-col">
           <h4>Contact</h4>
           <ul className="footer-contact-list">
-            <li><strong>Phone</strong>347-584-2350</li>
-            <li><strong>Email</strong>hello@builtbyjeany.com</li>
+            <li>
+              <strong>Phone</strong>
+              <a href="tel:+13475842350" style={{color:'inherit',textDecoration:'none'}}>347-584-2350</a>
+            </li>
+            <li>
+              <strong>Email</strong>
+              <a href="mailto:hello@builtbyjeany.com" style={{color:'inherit',textDecoration:'none'}}>hello@builtbyjeany.com</a>
+            </li>
             <li><strong>Location</strong>New York, NY</li>
             <li><strong>Hours</strong>Fri–Sat all day · Mon–Thu mornings</li>
           </ul>
