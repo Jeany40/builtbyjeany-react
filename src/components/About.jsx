@@ -6,8 +6,8 @@ function About() {
       <div className="about-img-wrap" data-reveal>
         <img
           className="about-img"
-          src="/images/extracted_1.png"
-          alt="Jean — BuiltByJeany, NYC handyman and renovation expert"
+          src="/images/jeany-about.jpg"
+          alt="Jean in his workshop — professional handyman and renovation expert at BuiltByJeany"
           loading="lazy"
         />
         <div className="about-img-badge">
