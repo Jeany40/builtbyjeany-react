@@ -4,15 +4,15 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
-  const closeMenu = () => setIsOpen(false);
+  const closeMenu  = () => setIsOpen(false);
 
   return (
     <>
       <nav>
-        <div className="nav-brand">
+        <a href="#hero" className="nav-brand">
           <div className="name">BuiltBy<span>Jeany</span></div>
           <div className="tagline">Plumbing · Electrical · Tile · Flooring · Repairs</div>
-        </div>
+        </a>
         <ul className="nav-links">
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
@@ -22,25 +22,30 @@ function Navbar() {
           <li><a href="#contact" className="nav-cta">Get a Quote</a></li>
         </ul>
         <div
-          className="hamburger"
+          className={`hamburger${isOpen ? ' open' : ''}`}
           onClick={toggleMenu}
           role="button"
-          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isOpen}
           tabIndex={0}
           onKeyDown={(e) => e.key === 'Enter' && toggleMenu()}
         >
-          <span></span><span></span><span></span>
+          <span /><span /><span />
         </div>
       </nav>
 
-      <div className={`mobile-menu ${isOpen ? 'open' : ''}`} id="mobileMenu" role="navigation" aria-label="Mobile navigation">
-        <a href="#services" onClick={closeMenu}>Services</a>
+      <div
+        className={`mobile-menu${isOpen ? ' open' : ''}`}
+        id="mobileMenu"
+        role="navigation"
+        aria-label="Mobile navigation"
+      >
+        <a href="#services"  onClick={closeMenu}>Services</a>
         <a href="#portfolio" onClick={closeMenu}>Portfolio</a>
-        <a href="#reviews" onClick={closeMenu}>Reviews</a>
-        <a href="#booking" onClick={closeMenu}>Book a Walkthrough</a>
-        <a href="#pricing" onClick={closeMenu}>Pricing</a>
-        <a href="#contact" onClick={closeMenu}>Get a Quote</a>
+        <a href="#reviews"   onClick={closeMenu}>Reviews</a>
+        <a href="#booking"   onClick={closeMenu}>Book a Walkthrough</a>
+        <a href="#pricing"   onClick={closeMenu}>Pricing</a>
+        <a href="#contact"   onClick={closeMenu}>Get a Quote</a>
       </div>
     </>
   );

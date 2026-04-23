@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css';
+import { useScrollEffects } from './hooks/useScrollEffects';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -14,8 +15,13 @@ import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 function App() {
+  useScrollEffects();
+
   return (
     <>
+      {/* Scroll progress bar */}
+      <div id="scroll-progress" aria-hidden="true" />
+
       <Navbar />
       <Hero />
       <About />
