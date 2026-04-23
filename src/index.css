@@ -1852,7 +1852,8 @@ footer::before {
   #about { grid-template-columns: 1fr 1fr; gap: 56px; }
 
   /* Services */
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid-premium { grid-template-columns: repeat(2, 1fr); }
+  .services-header       { gap: 40px; }
 
   /* Booking */
   .booking-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -1897,9 +1898,9 @@ footer::before {
   .about-img-badge   { left: 0; bottom: 0; }
 
   /* Services */
-  .services-grid          { grid-template-columns: 1fr 1fr; }
-  .services-header        { flex-direction: column; align-items: flex-start; gap: 14px; margin-bottom: 52px; }
-  .services-header p      { max-width: 100%; }
+  .services-header        { grid-template-columns: 1fr; gap: 32px; margin-bottom: 52px; }
+  .services-header-right p { max-width: 100%; }
+  .services-grid-premium  { grid-template-columns: 1fr 1fr; }
 
   /* Portfolio */
   .ba-grid        { grid-template-columns: 1fr; }
@@ -1982,11 +1983,10 @@ footer::before {
   .about-body p     { font-size: 14px; }
 
   /* Services */
-  .services-grid  { grid-template-columns: 1fr; }
-  .service-card   { padding: 30px 24px; }
-  .service-num    { font-size: 11px; }
-  .service-name   { font-size: 20px; }
-  .service-desc   { font-size: 13px; }
+  .services-grid-premium { grid-template-columns: 1fr; gap: 24px; }
+  .service-card-v2       { padding: 32px 28px; min-height: auto; gap: 24px; }
+  .card-title            { font-size: 24px; }
+  .card-desc             { font-size: 13px; }
 
   /* Portfolio */
   .ba-grid          { grid-template-columns: 1fr; gap: 2px; }
@@ -2061,8 +2061,9 @@ footer::before {
     clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
   }
 
-  .review-card  { width: 260px; padding: 20px; }
-  .service-card { padding: 24px 18px; }
+  .review-card     { width: 260px; padding: 20px; }
+  .service-card-v2 { padding: 24px 20px; gap: 20px; }
+  .card-title      { font-size: 22px; }
 
   .contact-form  { padding: 20px 14px; }
   .form-submit   { font-size: 10px; }
