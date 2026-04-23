@@ -601,12 +601,12 @@ section { padding: 120px 6%; }
 }
 .about-img {
   width: 100%;
-  aspect-ratio: 4/5;
-  object-fit: cover;
-  object-position: top center;
+  height: auto;
   display: block;
   filter: grayscale(15%) contrast(1.06) brightness(0.96);
-  transition: filter 0.5s;
+  transition: all 0.5s;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  border-radius: 2px;
 }
 .about-img-wrap:hover .about-img {
   filter: grayscale(0%) contrast(1.08) brightness(1);
@@ -1795,12 +1795,8 @@ footer::before {
   .stat-num       { font-size: 34px; }
 
   /* About */
-  #about {
-    grid-template-columns: 1fr;
-    gap: 44px;
-    padding: 88px 5.5%;
-  }
-  .about-img         { aspect-ratio: 16/9; object-position: top center; }
+  #about { grid-template-columns: 1fr; gap: 44px; padding: 88px 5.5%; }
+  .about-img         { width: 100%; height: auto; aspect-ratio: auto; }
   .about-img-wrap::before,
   .about-img-wrap::after { display: none; }
   .about-img-badge   { left: 0; bottom: 0; }
@@ -1884,7 +1880,7 @@ footer::before {
 
   /* About */
   #about            { padding: 72px 5%; gap: 36px; }
-  .about-img        { aspect-ratio: 4/3; object-position: top center; }
+  .about-img        { height: auto; aspect-ratio: auto; }
   .about-img-badge  { left: 0; bottom: 0; padding: 14px 18px; }
   .about-img-badge .num { font-size: 22px; }
   .about-img-badge .txt { font-size: 8px; }
