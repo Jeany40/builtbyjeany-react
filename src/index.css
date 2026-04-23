@@ -153,15 +153,25 @@ nav.scrolled {
 .nav-links a:hover::after,
 .nav-links a.active::after { width: 100%; }
 
+/* Nav CTA — matches btn-primary exactly, slightly compact for the nav */
 .nav-cta {
   background: var(--orange) !important;
   color: var(--white2) !important;
-  padding: 9px 24px !important;
-  letter-spacing: 0.12em !important;
-  font-weight: 500 !important;
-  border-radius: var(--radius) !important;
+  font-family: var(--sans) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  padding: 10px 22px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  border: none !important;
+  border-radius: 0 !important;
+  cursor: pointer !important;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px)) !important;
   transition: background var(--transition), transform 0.15s, box-shadow var(--transition) !important;
-  box-shadow: 0 0 0 transparent;
+  text-decoration: none !important;
 }
 .nav-cta::after { display: none !important; }
 .nav-cta:hover {
@@ -243,45 +253,79 @@ nav.scrolled {
 .mobile-menu a:last-child { border-bottom: none; }
 
 /* =====================
-   BUTTONS
+   BUTTONS — shared token
    ===================== */
-.btn-primary {
-  background: var(--orange);
-  color: var(--white2);
-  text-decoration: none;
+
+/* Shared geometry used by all solid/bordered CTAs */
+:is(.btn-primary, .btn-outline) {
   font-family: var(--sans);
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 600;
-  padding: 15px 36px;
+  padding: 14px 32px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  transition: background var(--transition), transform 0.15s, box-shadow var(--transition);
-  border: none;
   cursor: pointer;
   border-radius: 0;
+  text-decoration: none;
   position: relative;
-  overflow: hidden;
+  transition: background var(--transition), color var(--transition),
+              border-color var(--transition), transform 0.15s,
+              box-shadow var(--transition);
+  /* Chamfered top-right + bottom-left corner */
   clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  white-space: nowrap;
 }
-.btn-primary::after {
+
+/* Arrow icon appended on solid buttons */
+:is(.btn-primary, .btn-outline)::after {
   content: '→';
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   letter-spacing: 0;
-  opacity: 0.7;
+  opacity: 0.65;
   transition: transform var(--transition), opacity var(--transition);
+  flex-shrink: 0;
+}
+
+:is(.btn-primary, .btn-outline):hover::after {
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+:is(.btn-primary, .btn-outline):active {
+  transform: translateY(0) !important;
+}
+
+/* ─── Filled variant ─── */
+.btn-primary {
+  background: var(--orange);
+  color: var(--white2);
+  border: none;
 }
 .btn-primary:hover {
   background: var(--orange-dark);
   transform: translateY(-2px);
   box-shadow: 0 14px 36px var(--orange-glow);
 }
-.btn-primary:hover::after { transform: translateX(4px); opacity: 1; }
-.btn-primary:active { transform: translateY(0); }
 
+/* ─── Bordered variant ─── */
+.btn-outline {
+  background: transparent;
+  color: var(--orange);
+  border: 1px solid rgba(201, 106, 32, 0.4);
+}
+.btn-outline:hover {
+  background: var(--orange);
+  color: var(--white2);
+  border-color: var(--orange);
+  box-shadow: 0 14px 36px var(--orange-glow);
+  transform: translateY(-2px);
+}
+
+/* ─── Ghost / text-link variant ─── */
 .btn-ghost {
   color: var(--gray2);
   text-decoration: none;
@@ -313,26 +357,6 @@ nav.scrolled {
 }
 .btn-ghost:hover { color: var(--white2); }
 .btn-ghost:hover .arrow { width: 44px; }
-
-.btn-outline {
-  border: 1px solid rgba(212, 114, 42, 0.35);
-  color: var(--orange);
-  text-decoration: none;
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 600;
-  padding: 15px 32px;
-  display: inline-block;
-  transition: all var(--transition);
-  border-radius: var(--radius);
-}
-.btn-outline:hover {
-  background: var(--orange);
-  color: var(--white2);
-  border-color: var(--orange);
-  box-shadow: 0 8px 24px var(--orange-glow);
-}
 
 /* =====================
    SECTION BASE
@@ -1485,39 +1509,44 @@ section { padding: 120px 6%; }
 .form-group select option { background: var(--dark4); }
 .form-group textarea { resize: vertical; min-height: 120px; }
 
+/* Form submit — full-width variant of btn-primary */
 .form-submit {
   width: 100%;
   background: var(--orange);
   color: var(--white2);
   font-family: var(--sans);
   font-size: 11px;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 600;
-  padding: 20px;
+  padding: 16px 32px;
   border: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   transition: background var(--transition), transform 0.15s, box-shadow var(--transition);
   margin-top: 10px;
-  border-radius: var(--radius);
+  border-radius: 0;
   position: relative;
-  overflow: hidden;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
 }
-.form-submit::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
-  opacity: 0;
-  transition: opacity var(--transition);
+.form-submit::after {
+  content: '→';
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  opacity: 0.65;
+  transition: transform var(--transition), opacity var(--transition);
 }
 .form-submit:hover:not(:disabled) {
   background: var(--orange-dark);
   transform: translateY(-1px);
-  box-shadow: 0 10px 30px var(--orange-glow);
+  box-shadow: 0 14px 36px var(--orange-glow);
 }
-.form-submit:hover::before { opacity: 1; }
-.form-submit:disabled { opacity: 0.7; cursor: default; transform: none; }
+.form-submit:hover:not(:disabled)::after { transform: translateX(4px); opacity: 1; }
+.form-submit:disabled { opacity: 0.65; cursor: default; transform: none; }
 
 /* =====================
    FOOTER
