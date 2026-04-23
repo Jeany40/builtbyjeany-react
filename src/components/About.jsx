@@ -9,6 +9,7 @@ function About() {
           src="/images/jeany-about.jpg"
           alt="Jean in his workshop — professional handyman and renovation expert at BuiltByJeany"
           loading="lazy"
+          decoding="async"
         />
         <div className="about-img-badge">
           <span className="num">NYC</span>

@@ -18,6 +18,7 @@ function Portfolio() {
             src="/images/extracted_2.jpg"
             alt="Bathroom before full renovation — Queens, New York"
             loading="lazy"
+            decoding="async"
           />
           <span className="ba-label before">Before</span>
         </div>
@@ -26,6 +27,7 @@ function Portfolio() {
             src="/images/extracted_3.jpg"
             alt="Bathroom after full renovation — Queens, New York"
             loading="lazy"
+            decoding="async"
           />
           <span className="ba-label after">After</span>
         </div>
