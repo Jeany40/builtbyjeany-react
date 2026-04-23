@@ -1727,112 +1727,258 @@ footer::before {
 /* =====================
    RESPONSIVE — TABLET (1024px)
    ===================== */
+/* ==========================================================
+   RESPONSIVE SYSTEM — BuiltByJeany
+   Breakpoints:
+     1280px  Large laptop / narrow desktop
+     1024px  Tablet landscape
+     768px   Tablet portrait
+     640px   Mobile
+     400px   Small mobile
+   ========================================================== */
+
+/* ─── 1280px: Wide adjustments ─── */
+@media (max-width: 1280px) {
+  .hero-content { max-width: 740px; }
+  .stat-num    { font-size: 36px; }
+}
+
+/* ─── 1024px: Tablet landscape ─── */
 @media (max-width: 1024px) {
+  section { padding: 100px 6%; }
+
+  /* Hero */
+  .hero-title  { font-size: clamp(50px, 8vw, 90px); }
+  .hero-sub    { max-width: 420px; }
+  .hero-stats  { margin-top: 56px; padding-top: 32px; }
+  .stat        { padding-right: 36px; margin-right: 36px; }
+
+  /* About */
+  #about { grid-template-columns: 1fr 1fr; gap: 56px; }
+
+  /* Services */
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Booking */
   .booking-inner { grid-template-columns: 1fr; gap: 48px; }
+  .calendly-wrap { max-width: 660px; }
   .calendly-inline-widget { height: 460px; }
-  .why-inner { grid-template-columns: 1fr; gap: 52px; }
-  .why-quote-wrap { position: static; }
+
+  /* Why */
+  .why-inner        { grid-template-columns: 1fr; gap: 52px; }
+  .why-quote-wrap   { position: static; }
+
+  /* Contact */
+  #contact { gap: 56px; }
+
+  /* Pricing */
+  .pricing-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
 }
 
-/* =====================
-   RESPONSIVE — TABLET (960px)
-   ===================== */
-@media (max-width: 960px) {
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
+/* ─── 768px: Tablet portrait ─── */
+@media (max-width: 768px) {
+  section { padding: 88px 5.5%; }
 
-  #about { grid-template-columns: 1fr; gap: 52px; }
-  .about-img { aspect-ratio: 16/9; object-position: center; }
-  .about-img-wrap::before { display: none; }
+  /* Nav */
+  .nav-links  { display: none; }
+  .hamburger  { display: flex; }
+  .nav-brand .tagline { display: none; } /* hide tagline on tablet to save space */
 
-  .services-grid { grid-template-columns: 1fr 1fr; }
-  .services-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  /* Hero */
+  #hero           { padding: 0 5.5%; min-height: 100svh; }
+  .hero-content   { padding-top: 100px; max-width: 100%; }
+  .hero-title     { font-size: clamp(46px, 10vw, 80px); }
+  .hero-sub       { font-size: 15px; max-width: 100%; }
+  .hero-actions   { gap: 20px; flex-wrap: wrap; }
+  .hero-stats     { gap: 0; margin-top: 52px; padding-top: 28px; }
+  .stat           { padding-right: 28px; margin-right: 28px; }
+  .stat-num       { font-size: 34px; }
 
-  .portfolio-info { flex-direction: column; gap: 28px; }
+  /* About */
+  #about {
+    grid-template-columns: 1fr;
+    gap: 44px;
+    padding: 88px 5.5%;
+  }
+  .about-img         { aspect-ratio: 16/9; object-position: center; }
+  .about-img-wrap::before,
+  .about-img-wrap::after { display: none; }
+  .about-img-badge   { left: 0; bottom: 0; }
 
-  .reviews-top { flex-direction: column; align-items: flex-start; }
+  /* Services */
+  .services-grid          { grid-template-columns: 1fr 1fr; }
+  .services-header        { flex-direction: column; align-items: flex-start; gap: 14px; margin-bottom: 52px; }
+  .services-header p      { max-width: 100%; }
 
-  #contact { grid-template-columns: 1fr; gap: 52px; }
+  /* Portfolio */
+  .ba-grid        { grid-template-columns: 1fr; }
+  .portfolio-info { flex-direction: column; gap: 24px; }
 
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 44px; }
-  .footer-brand { grid-column: 1 / -1; }
+  /* Reviews */
+  .reviews-top    { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .reviews-score  { font-size: 60px; }
+  .reviews-actions { flex-direction: column; align-items: flex-start; gap: 14px; }
 
-  .pricing-actions { flex-direction: column; align-items: flex-start; }
+  /* Why */
+  .trust-item  { gap: 18px; }
+  .why-pull    { font-size: clamp(26px, 7vw, 40px); padding-left: 20px; }
+
+  /* Pricing */
+  .pricing-table td            { padding: 18px 0; }
+  .pricing-table td:first-child { font-size: 13px; padding-right: 14px; }
+  .pricing-table td:last-child  { font-size: clamp(18px, 4vw, 24px); }
+  .pricing-actions              { flex-direction: column; align-items: flex-start; gap: 14px; }
+
+  /* Booking */
+  .booking-inner              { grid-template-columns: 1fr; gap: 40px; }
+  .calendly-wrap              { max-width: 100%; }
+  .cal-header                 { padding: 24px; }
+  .cal-header h3              { font-size: 22px; }
+  .calendly-inline-widget     { height: 420px; min-width: 100%; }
+  .booking-perks              { gap: 12px; }
+
+  /* Contact */
+  #contact             { grid-template-columns: 1fr; gap: 44px; padding: 88px 5.5%; }
+  .contact-form        { padding: 32px 24px; }
+  .form-row            { grid-template-columns: 1fr; }
+  .contact-details     { gap: 20px; }
+
+  /* Footer */
+  .footer-grid   { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .footer-brand  { grid-column: 1 / -1; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 6px; }
+  footer         { padding: 64px 5.5% 36px; }
 }
 
-/* =====================
-   RESPONSIVE — MOBILE (640px)
-   ===================== */
+/* ─── 640px: Mobile ─── */
 @media (max-width: 640px) {
-  section { padding: 72px 5%; }
-  nav { padding: 0 5%; }
+  section  { padding: 72px 5%; }
+  nav      { padding: 0 5%; }
 
-  .hero-content { padding-top: 110px; }
-  #hero { padding: 0 5%; min-height: 100svh; }
-  .hero-title { font-size: clamp(44px, 13vw, 72px); }
-  .hero-sub { font-size: 15px; }
-  .hero-actions { flex-direction: column; align-items: flex-start; gap: 22px; }
+  /* Hero */
+  #hero           { padding: 0 5%; min-height: 100svh; }
+  .hero-content   { padding-top: 108px; }
+  .hero-title     { font-size: clamp(40px, 12.5vw, 68px); line-height: 0.93; }
+  .hero-sub       { font-size: 14px; margin-bottom: 40px; }
+  .hero-actions   { flex-direction: column; align-items: flex-start; gap: 18px; }
+  /* Stats — horizontal 3-up on mobile */
   .hero-stats {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 0;
-    margin-top: 52px;
-    padding-top: 32px;
+    margin-top: 44px;
+    padding-top: 28px;
   }
   .stat {
-    border-right: none; padding-right: 0; margin-right: 0;
-    border-bottom: 1px solid var(--line2);
-    padding-bottom: 22px; margin-bottom: 4px;
+    border-right: 1px solid var(--line2);
+    border-bottom: none;
+    padding-right: 0; margin-right: 0;
+    padding-left: 0;
+    text-align: center;
   }
-  .stat:last-child { border-bottom: none; padding-bottom: 0; }
-  .stat-num { font-size: 36px; }
+  .stat:last-child { border-right: none; }
+  .stat-num        { font-size: 28px; }
+  .stat-label      { font-size: 8px; letter-spacing: 0.18em; }
+  .hero-line-left,
+  .hero-line-right { display: none; }
 
-  #about { padding: 72px 5%; }
-  .about-img-badge { padding: 16px 20px; }
-  .about-img-badge .num { font-size: 26px; }
+  /* About */
+  #about            { padding: 72px 5%; gap: 36px; }
+  .about-img        { aspect-ratio: 4/3; }
+  .about-img-badge  { left: 0; bottom: 0; padding: 14px 18px; }
+  .about-img-badge .num { font-size: 22px; }
+  .about-img-badge .txt { font-size: 8px; }
+  .about-body p     { font-size: 14px; }
 
-  .services-grid { grid-template-columns: 1fr; }
-  .service-card { padding: 32px 28px; }
+  /* Services */
+  .services-grid  { grid-template-columns: 1fr; }
+  .service-card   { padding: 30px 24px; }
+  .service-num    { font-size: 11px; }
+  .service-name   { font-size: 20px; }
+  .service-desc   { font-size: 13px; }
 
-  .ba-grid { grid-template-columns: 1fr; }
-  .portfolio-tags { gap: 6px; }
+  /* Portfolio */
+  .ba-grid          { grid-template-columns: 1fr; gap: 2px; }
+  .portfolio-tags   { gap: 6px; }
+  .portfolio-desc h3 { font-size: 18px; }
+  .portfolio-desc p  { font-size: 13px; }
 
-  .review-card { width: 285px; padding: 28px; }
-  .reviews-score { font-size: 56px; }
+  /* Reviews */
+  .review-card      { width: 280px; padding: 24px; }
+  .review-text      { font-size: 13px; }
+  .reviews-score    { font-size: 52px; }
+  .reviews-actions  { flex-direction: column; align-items: flex-start; gap: 12px; }
 
-  .why-pull { font-size: clamp(24px, 7vw, 36px); padding-left: 24px; }
-  .trust-item { gap: 18px; }
+  /* Why */
+  .trust-item     { gap: 16px; }
+  .trust-text h4  { font-size: 15px; }
+  .trust-text p   { font-size: 13px; }
+  .why-pull       { font-size: clamp(22px, 7vw, 34px); padding-left: 18px; }
+  .trust-list     { gap: 24px; }
 
-  .pricing-table td { padding: 18px 0; }
-  .pricing-table td:first-child { font-size: 13px; padding-right: 16px; }
-  .pricing-table td:last-child { font-size: 20px; }
-  .pricing-actions { flex-direction: column; align-items: flex-start; }
+  /* Pricing */
+  .pricing-table  { font-size: 13px; }
+  .pricing-table td             { padding: 16px 0; }
+  .pricing-table td:first-child { font-size: 13px; padding-right: 12px; }
+  .pricing-table td:last-child  { font-size: 18px; white-space: nowrap; }
+  .pricing-note   { font-size: 11px; }
+  .pricing-actions { flex-direction: column; align-items: flex-start; gap: 12px; }
 
-  .calendly-inline-widget { height: 400px; min-width: 100%; }
-  .cal-header { padding: 22px 22px; }
-  .cal-header h3 { font-size: 22px; }
-  .booking-inner { gap: 36px; }
+  /* Booking */
+  .booking-inner          { gap: 32px; padding: 72px 5%; }
+  .cal-header             { padding: 20px; }
+  .cal-header h3          { font-size: 20px; }
+  .cal-meta               { gap: 10px; }
+  .cal-meta-item          { font-size: 12px; }
+  .calendly-inline-widget { height: 380px; min-width: 100%; }
 
-  .contact-form { padding: 32px 22px; }
-  .form-row { grid-template-columns: 1fr; }
-  #contact { padding: 72px 5%; }
+  /* Contact */
+  #contact        { padding: 72px 5%; gap: 36px; }
+  .contact-form   { padding: 28px 18px; }
+  .form-row       { grid-template-columns: 1fr; }
+  .contact-item   { gap: 12px; }
+  .contact-icon-wrap { width: 40px; height: 40px; }
 
-  .footer-grid { grid-template-columns: 1fr; gap: 40px; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; }
-  footer { padding: 60px 5% 36px; }
+  /* Footer */
+  .footer-grid   { grid-template-columns: 1fr; gap: 36px; }
+  .footer-brand  { grid-column: auto; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 4px; font-size: 11px; }
+  footer         { padding: 56px 5% 32px; }
+  .footer-logo   { font-size: 22px; }
+  .footer-links li { margin-bottom: 8px; }
 
-  .wa-float { bottom: 22px; right: 22px; }
+  /* Floating WhatsApp */
+  .wa-float { bottom: 20px; right: 20px; }
 }
 
-/* =====================
-   RESPONSIVE — SMALL MOBILE (380px)
-   ===================== */
-@media (max-width: 380px) {
-  .hero-title { font-size: 38px; }
-  .section-title { font-size: 32px; }
-  .btn-primary { padding: 15px 30px; font-size: 11px; }
-  .pricing-table td:last-child { font-size: 18px; }
-  .review-card { width: 265px; }
-  .contact-form { padding: 22px 16px; }
+/* ─── 400px: Small mobile ─── */
+@media (max-width: 400px) {
+  section  { padding: 60px 4.5%; }
+
+  .hero-title    { font-size: 36px; }
+  .hero-eyebrow  { display: none; }
+  .hero-sub      { font-size: 13px; }
+  .hero-stats    { grid-template-columns: 1fr 1fr 1fr; }
+  .stat-num      { font-size: 24px; }
+  .stat-label    { font-size: 7px; letter-spacing: 0.12em; }
+
+  .section-title { font-size: clamp(28px, 9vw, 38px); }
+
+  :is(.btn-primary, .btn-outline) {
+    padding: 13px 24px;
+    font-size: 10px;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  }
+
+  .review-card  { width: 260px; padding: 20px; }
+  .service-card { padding: 24px 18px; }
+
+  .contact-form  { padding: 20px 14px; }
+  .form-submit   { font-size: 10px; }
+
   .why-pull::before { display: none; }
-  .why-pull { padding-left: 0; }
+  .why-pull         { padding-left: 0; border-left: 3px solid var(--orange); padding-left: 16px; }
+
+  .pricing-table td:last-child { font-size: 16px; }
+  .cal-badge { font-size: 9px; padding: 4px 10px; }
 }
