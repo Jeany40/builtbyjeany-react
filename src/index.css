@@ -1800,7 +1800,7 @@ footer::before {
     gap: 44px;
     padding: 88px 5.5%;
   }
-  .about-img         { aspect-ratio: 16/9; object-position: center; }
+  .about-img         { aspect-ratio: 16/9; object-position: top center; }
   .about-img-wrap::before,
   .about-img-wrap::after { display: none; }
   .about-img-badge   { left: 0; bottom: 0; }
@@ -1884,7 +1884,7 @@ footer::before {
 
   /* About */
   #about            { padding: 72px 5%; gap: 36px; }
-  .about-img        { aspect-ratio: 4/3; }
+  .about-img        { aspect-ratio: 4/3; object-position: top center; }
   .about-img-badge  { left: 0; bottom: 0; padding: 14px 18px; }
   .about-img-badge .num { font-size: 22px; }
   .about-img-badge .txt { font-size: 8px; }
