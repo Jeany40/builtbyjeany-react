@@ -3,13 +3,12 @@ import React from 'react';
 function Hero() {
   return (
     <section id="hero">
-      {/* Visual texture layers */}
       <div className="hero-grid-overlay" aria-hidden="true" />
       <div className="hero-line-left"  aria-hidden="true" />
       <div className="hero-line-right" aria-hidden="true" />
 
       <div className="hero-content">
-        <div className="hero-location">
+        <div className="hero-eyebrow">
           <div className="line" aria-hidden="true" />
           <span>Queens · Brooklyn · Long Island</span>
         </div>
