@@ -10,8 +10,7 @@ function Navbar() {
     <>
       <nav>
         <a href="#hero" className="nav-brand">
-          <div className="name">BuiltBy<span>Jeany</span></div>
-          <div className="tagline">Plumbing · Electrical · Tile · Flooring · Repairs</div>
+          <img src="/images/logo.png" alt="BuiltByJeany Logo" className="logo-img" />
         </a>
         <ul className="nav-links">
           <li><a href="#services">Services</a></li>

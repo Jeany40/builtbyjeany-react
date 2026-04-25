@@ -7,8 +7,7 @@ function Footer() {
     <footer>
       <div className="footer-grid">
         <div className="footer-brand">
-          <div className="logo">BuiltBy<span>Jeany</span></div>
-          <div className="tagline">"Quality work. Honest pricing. Every time."</div>
+          <img src="/images/logo.png" alt="BuiltByJeany Logo" className="footer-logo-img" />
           <p>
             Proudly serving Queens, Brooklyn, Long Island, the Bronx,
             Manhattan, and Staten Island. Local, reliable, and always on time.
