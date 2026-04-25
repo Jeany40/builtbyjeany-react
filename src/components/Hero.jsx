@@ -3,33 +3,49 @@ import React from 'react';
 function Hero() {
   return (
     <section id="hero">
+      <div className="hero-bg" aria-hidden="true" />
       <div className="hero-grid-overlay" aria-hidden="true" />
       <div className="hero-line-left"  aria-hidden="true" />
       <div className="hero-line-right" aria-hidden="true" />
 
       <div className="hero-content">
-        <div className="hero-eyebrow">
-          <div className="line" aria-hidden="true" />
-          <span>Queens · Brooklyn · Long Island</span>
-        </div>
+        <div className="hero-main">
+          <div className="hero-text">
+            <div className="hero-eyebrow">
+              <div className="line" aria-hidden="true" />
+              <span>Queens · Brooklyn · Long Island</span>
+            </div>
 
-        <h1 className="hero-title">
-          Your Home<br />Deserves<br /><em>Skilled Hands.</em>
-        </h1>
+            <h1 className="hero-title">
+              Your Home<br />Deserves<br /><em>Skilled Hands.</em>
+            </h1>
 
-        <p className="hero-sub">
-          Skilled maintenance professional serving the NYC metro area.
-          From full bathroom builds to everyday repairs — done right, the first time.
-        </p>
+            <p className="hero-sub">
+              Skilled maintenance professional serving the NYC metro area.
+              From full bathroom builds to everyday repairs — done right, the first time.
+            </p>
 
-        <div className="hero-actions">
-          <a href="#contact" className="btn-primary" id="hero-cta-primary">
-            Get a Free Quote
-          </a>
-          <a href="#portfolio" className="btn-ghost" id="hero-cta-ghost">
-            <span>See the Work</span>
-            <span className="arrow" aria-hidden="true" />
-          </a>
+            <div className="hero-actions">
+              <a href="#contact" className="btn-primary" id="hero-cta-primary">
+                Get a Free Quote
+              </a>
+              <a href="#portfolio" className="btn-ghost" id="hero-cta-ghost">
+                <span>See the Work</span>
+                <span className="arrow" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+
+          <div className="hero-image-wrap" data-reveal>
+            <div className="hero-image-inner">
+              <img src="/images/extracted_3_orig.jpg" alt="Featured Bathroom Renovation" className="hero-featured-img" />
+              <div className="hero-image-badge">
+                <span className="badge-label">Featured Work</span>
+                <span className="badge-title">Queens Village Bath</span>
+              </div>
+            </div>
+            <div className="hero-image-decoration" />
+          </div>
         </div>
 
         <div className="hero-stats">
